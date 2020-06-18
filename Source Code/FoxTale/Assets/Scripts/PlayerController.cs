@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
                 if (isGrounded)
                 {
                     theRigidBody.velocity = new Vector2(theRigidBody.velocity.x, jumpSpeed);
+                    AudioManager.instance.PlaySFX(10);
                 }
                 else
                 {
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour
                     {
                         theRigidBody.velocity = new Vector2(theRigidBody.velocity.x, jumpSpeed);
                         canDoubleJump = false;
+                        AudioManager.instance.PlaySFX(10);
                     }
                 }
             }
@@ -101,5 +103,6 @@ public class PlayerController : MonoBehaviour
     public void Bounce()
     {
         theRigidBody.velocity = new Vector2(theRigidBody.velocity.x, bounceSpeed);
+        AudioManager.instance.PlaySFX(10);
     }
 }

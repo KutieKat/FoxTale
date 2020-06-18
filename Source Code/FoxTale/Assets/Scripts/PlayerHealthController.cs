@@ -59,6 +59,7 @@ public class PlayerHealthController : MonoBehaviour
                 theSpriteRenderer.color = new Color(theSpriteRenderer.color.r, theSpriteRenderer.color.g, theSpriteRenderer.color.b, 0.5f);
             
                 PlayerController.instance.Deflect();
+                AudioManager.instance.PlaySFX(9);
             }
 
             UIController.instance.UpdateHealthDisplay();
