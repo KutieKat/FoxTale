@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer theSpriteRenderer;
     private float deflectCounter;
 
+    public float bounceSpeed;
+
     private void Awake()
     {
         instance = this;
@@ -88,11 +90,16 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isGrounded", isGrounded);
     }
 
-    public void deflect()
+    public void Deflect()
     {
         deflectCounter = deflectLength;
         theRigidBody.velocity = new Vector2(0f, theRigidBody.velocity.y);
 
         anim.SetTrigger("hurt");
+    }
+
+    public void Bounce()
+    {
+        theRigidBody.velocity = new Vector2(theRigidBody.velocity.x, bounceSpeed);
     }
 }

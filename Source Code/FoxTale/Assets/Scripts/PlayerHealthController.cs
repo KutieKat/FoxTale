@@ -48,7 +48,6 @@ public class PlayerHealthController : MonoBehaviour
             if (currentHealth <= 0)
             {
                 currentHealth = 0;
-                // gameObject.SetActive(false);
 
                 Instantiate(deathEffect, transform.position, transform.rotation);
 
@@ -59,7 +58,7 @@ public class PlayerHealthController : MonoBehaviour
                 invincibleCounter = invincibleLength;
                 theSpriteRenderer.color = new Color(theSpriteRenderer.color.r, theSpriteRenderer.color.g, theSpriteRenderer.color.b, 0.5f);
             
-                PlayerController.instance.deflect();
+                PlayerController.instance.Deflect();
             }
 
             UIController.instance.UpdateHealthDisplay();
