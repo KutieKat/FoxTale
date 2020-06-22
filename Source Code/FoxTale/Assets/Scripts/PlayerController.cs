@@ -36,55 +36,58 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (deflectCounter <= 0)
+        if (!PauseMenu.instance.isPaused)
         {
-            theRigidBody.velocity = new Vector2(moveSpeed * Input.GetAxisRaw("Horizontal"), theRigidBody.velocity.y);
-
-            isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, .2f, whatIsGround);
-
-            if (isGrounded)
+            if (deflectCounter <= 0)
             {
-                canDoubleJump = true;
-            }
+                theRigidBody.velocity = new Vector2(moveSpeed * Input.GetAxisRaw("Horizontal"), theRigidBody.velocity.y);
 
-            if (Input.GetButtonDown("Jump"))
-            {
+                isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, .2f, whatIsGround);
+
                 if (isGrounded)
                 {
-                    theRigidBody.velocity = new Vector2(theRigidBody.velocity.x, jumpSpeed);
-                    AudioManager.instance.PlaySFX(10);
+                    canDoubleJump = true;
                 }
-                else
+
+                if (Input.GetButtonDown("Jump"))
                 {
-                    if (canDoubleJump)
+                    if (isGrounded)
                     {
                         theRigidBody.velocity = new Vector2(theRigidBody.velocity.x, jumpSpeed);
-                        canDoubleJump = false;
                         AudioManager.instance.PlaySFX(10);
                     }
+                    else
+                    {
+                        if (canDoubleJump)
+                        {
+                            theRigidBody.velocity = new Vector2(theRigidBody.velocity.x, jumpSpeed);
+                            canDoubleJump = false;
+                            AudioManager.instance.PlaySFX(10);
+                        }
+                    }
                 }
-            }
 
-            if (theRigidBody.velocity.x < 0)
-            {
-                theSpriteRenderer.flipX = true;
-            }
-            else if (theRigidBody.velocity.x > 0)
-            {
-                theSpriteRenderer.flipX = false;
-            }
-        }
-        else
-        {
-            deflectCounter -= Time.deltaTime;
-
-            if (!theSpriteRenderer.flipX)
-            {
-                theRigidBody.velocity = new Vector2(-deflectSpeed, theRigidBody.velocity.y);
+                if (theRigidBody.velocity.x < 0)
+                {
+                    theSpriteRenderer.flipX = true;
+                }
+                else if (theRigidBody.velocity.x > 0)
+                {
+                    theSpriteRenderer.flipX = false;
+                }
             }
             else
             {
-                theRigidBody.velocity = new Vector2(deflectSpeed, theRigidBody.velocity.y);
+                deflectCounter -= Time.deltaTime;
+
+                if (!theSpriteRenderer.flipX)
+                {
+                    theRigidBody.velocity = new Vector2(-deflectSpeed, theRigidBody.velocity.y);
+                }
+                else
+                {
+                    theRigidBody.velocity = new Vector2(deflectSpeed, theRigidBody.velocity.y);
+                }
             }
         }
 
