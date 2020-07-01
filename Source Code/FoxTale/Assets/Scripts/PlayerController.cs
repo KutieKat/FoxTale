@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private float deflectCounter;
 
     public float bounceSpeed;
+    public bool stopInput;
 
     private void Awake()
     {
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!PauseMenu.instance.isPaused)
+        if (!PauseMenu.instance.isPaused && !stopInput)
         {
             if (deflectCounter <= 0)
             {

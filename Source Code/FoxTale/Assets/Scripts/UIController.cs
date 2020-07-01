@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
     public Text gemText;
     public Image fadeScreen;
     public float fadeSpeed;
+    public GameObject levelCompleteText;
     private bool shouldFadeToBlack, shouldFadeFromBlack;
 
     private void Awake()

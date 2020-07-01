@@ -16,7 +16,7 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayBackgroundMusic();
     }
 
     // Update is called once per frame
@@ -30,5 +30,17 @@ public class AudioManager : MonoBehaviour
         soundEffects[soundToPlay].Stop();
         soundEffects[soundToPlay].pitch = Random.Range(0.9f, 1.1f);
         soundEffects[soundToPlay].Play();
+    }
+
+    public void PlayBackgroundMusic()
+    {
+        levelEndMusic.Stop();
+        backgroundMusic.Play();
+    }
+
+    public void PlayLevelEndMusic()
+    {
+        backgroundMusic.Stop();
+        levelEndMusic.Play();
     }
 }
