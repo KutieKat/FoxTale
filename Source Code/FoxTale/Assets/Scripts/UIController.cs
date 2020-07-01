@@ -119,12 +119,16 @@ public class UIController : MonoBehaviour
 
     public void FadeToBlack()
     {
+        fadeScreen.gameObject.SetActive(true);
+
         shouldFadeToBlack = true;
         shouldFadeFromBlack = false;
     }
 
     public void FadeFromBlack()
     {
+        fadeScreen.gameObject.SetActive(false);
+        
         shouldFadeFromBlack = true;
         shouldFadeToBlack = false;
     }

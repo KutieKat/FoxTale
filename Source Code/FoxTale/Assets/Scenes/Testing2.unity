@@ -15834,6 +15834,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8973538143157960225, guid: f5c44454f87acdb4a98b4acf168f3989,
+        type: 3}
+      propertyPath: levelToLoad
+      value: Over_World
+      objectReference: {fileID: 0}
+    - target: {fileID: 8973538143223295139, guid: f5c44454f87acdb4a98b4acf168f3989,
+        type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8973538144001825119, guid: f5c44454f87acdb4a98b4acf168f3989,
+        type: 3}
+      propertyPath: levelSelect
+      value: Over_World
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5c44454f87acdb4a98b4acf168f3989, type: 3}
 --- !u!1 &2127611565
