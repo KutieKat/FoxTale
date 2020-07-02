@@ -53,12 +53,12 @@ public class PauseMenu : MonoBehaviour
         PlayerPrefs.SetString("CurrentLevel", SceneManager.GetActiveScene().name);
         
         SceneManager.LoadScene(levelSelect);
-        Time.timeScale = 1f;
+        Time.timeScale = 1.0f;
     }
 
     public void MainMenu()
     {
         SceneManager.LoadScene(mainMenu);
-        Time.timeScale = 1f;
+        Time.timeScale = 1.0f;
     }
 }
