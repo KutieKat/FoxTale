@@ -790,6 +790,7 @@ MonoBehaviour:
   waitToRespawn: 2
   gemsCollected: 0
   levelToLoad: Main_Menu
+  timeInLevel: 0
 --- !u!1 &8973538143386380248
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,6 +1630,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3210789273779120609, guid: b0ebc0e2cfe6af049a6de9eafbc21b50,
+        type: 3}
+      propertyPath: bossMusic
+      value: 
+      objectReference: {fileID: 1599861584937408599}
     - target: {fileID: 3210789273779120622, guid: b0ebc0e2cfe6af049a6de9eafbc21b50,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1684,11 +1690,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5058865172563255960, guid: b0ebc0e2cfe6af049a6de9eafbc21b50,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 6684658879142970129, guid: d5553dcb8f22e1c43afd02e4443e9a27,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0ebc0e2cfe6af049a6de9eafbc21b50, type: 3}
 --- !u!4 &8973538142648505121 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3210789273779120622, guid: b0ebc0e2cfe6af049a6de9eafbc21b50,
+    type: 3}
+  m_PrefabInstance: {fileID: 5766695155688454863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1599861584937408599 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5058865172563255960, guid: b0ebc0e2cfe6af049a6de9eafbc21b50,
     type: 3}
   m_PrefabInstance: {fileID: 5766695155688454863}
   m_PrefabAsset: {fileID: 0}
