@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class BossActivator : MonoBehaviour
 {
+    public static BossActivator instance;
+
     public GameObject theBossBattle;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossTankController : MonoBehaviour
 {
+    public static BossTankController instance;
     public enum bossStates
     {
         shooting,
@@ -12,7 +13,6 @@ public class BossTankController : MonoBehaviour
         ended
     };
     public bossStates currentState;
-
     public Transform theBoss;
     public Animator anim;
 
@@ -41,6 +41,11 @@ public class BossTankController : MonoBehaviour
     public GameObject explosion, winPlatform;
     private bool isDefeated;
     public float shotSpeedUp, mineSpeedUp;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()

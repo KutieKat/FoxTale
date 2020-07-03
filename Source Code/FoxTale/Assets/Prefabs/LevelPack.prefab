@@ -52,7 +52,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.059640408, y: -0.7455088}
+  m_Offset: {x: -0.063941956, y: -0.7455088}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -63,7 +63,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.13095, y: 0.5089824}
+  m_Size: {x: 0.743824, y: 0.5089824}
   m_EdgeRadius: 0
 --- !u!1 &8973538142255344951
 GameObject:
@@ -956,7 +956,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.047880173, y: -0.10258627}
+  m_Offset: {x: -0.060783863, y: -0.06817496}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -967,7 +967,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5130062, y: 0.38689852}
+  m_Size: {x: 0.5044031, y: 0.38689828}
   m_EdgeRadius: 0
 --- !u!114 &8973538143472574287
 MonoBehaviour:
@@ -1696,6 +1696,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6684658879142970129, guid: d5553dcb8f22e1c43afd02e4443e9a27,
         type: 2}
+    - target: {fileID: 5058865172563255960, guid: b0ebc0e2cfe6af049a6de9eafbc21b50,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5058865172563255960, guid: b0ebc0e2cfe6af049a6de9eafbc21b50,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0ebc0e2cfe6af049a6de9eafbc21b50, type: 3}
 --- !u!4 &8973538142648505121 stripped
@@ -2467,6 +2477,11 @@ PrefabInstance:
     - target: {fileID: 4364805987012394411, guid: d7579722db3c32445b99909ef559021a,
         type: 3}
       propertyPath: bounceSpeed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4364805987012394411, guid: d7579722db3c32445b99909ef559021a,
+        type: 3}
+      propertyPath: jumpSpeed
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4364805987012394414, guid: d7579722db3c32445b99909ef559021a,

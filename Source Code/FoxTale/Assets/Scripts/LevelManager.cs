@@ -41,10 +41,14 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(waitToRespawn - (1f / UIController.instance.fadeSpeed));
 
         UIController.instance.FadeToBlack();
+        AudioManager.instance.StopBossMusic();
 
         yield return new WaitForSeconds((1f / UIController.instance.fadeSpeed) + 0.2f);
 
         UIController.instance.FadeFromBlack();
+        BossActivator.instance.gameObject.SetActive(true);
+        BossTankController.instance.gameObject.SetActive(false);
+        BossTankController.instance.healths = 5;
 
         PlayerController.instance.gameObject.SetActive(true);
         PlayerController.instance.transform.position = CheckpointsController.instance.spawnPoint;
