@@ -1335,6 +1335,7 @@ GameObject:
   - component: {fileID: 8973538144001825112}
   - component: {fileID: 8973538144001825116}
   - component: {fileID: 8973538144001825119}
+  - component: {fileID: 7860473644414106421}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1471,6 +1472,21 @@ MonoBehaviour:
   mainMenu: Main_Menu
   pauseScreen: {fileID: 8973538142950289404}
   isPaused: 0
+  showAdsManager: {fileID: 7860473644414106421}
+--- !u!114 &7860473644414106421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8973538144001825113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfb704bbc0bfdd4429939ea1d5633452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idAdMobInterstitial: ca-app-pub-1792981577243599/3655129890
+  testDeviceId: 563703F67E3AFCA06E60A7A608D90BDA
 --- !u!1 &8973538144125199344
 GameObject:
   m_ObjectHideFlags: 0
@@ -2805,15 +2821,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8973538143520718451}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &8733171666616870772 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 412673349308389639, guid: a8b16c72b195d7546a9ac7c474a82502,
-    type: 3}
-  m_PrefabInstance: {fileID: 8973538143520718451}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8733171666924770801 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 412673349537688450, guid: a8b16c72b195d7546a9ac7c474a82502,
+    type: 3}
+  m_PrefabInstance: {fileID: 8973538143520718451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8733171666616870772 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 412673349308389639, guid: a8b16c72b195d7546a9ac7c474a82502,
     type: 3}
   m_PrefabInstance: {fileID: 8973538143520718451}
   m_PrefabAsset: {fileID: 0}

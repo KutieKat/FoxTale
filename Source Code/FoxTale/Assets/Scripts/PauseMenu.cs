@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     public string levelSelect, mainMenu;
     public GameObject pauseScreen;
     public bool isPaused;
+    public ShowAdsManager showAdsManager;
 
     private void Awake()
     {
@@ -29,6 +30,7 @@ public class PauseMenu : MonoBehaviour
 
     public void PauseGame()
     {
+        showAdsManager.ShowFullAdmod();
         PauseUnpause();
     }
 
