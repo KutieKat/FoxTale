@@ -42,6 +42,9 @@ public class BossTankController : MonoBehaviour
     private bool isDefeated;
     public float shotSpeedUp, mineSpeedUp;
 
+    private float initialTimeBetweenShots;
+    private float initialTimeBetweenMines;
+
     private void Awake()
     {
         instance = this;
@@ -51,6 +54,8 @@ public class BossTankController : MonoBehaviour
     void Start()
     {
         currentState = bossStates.shooting;
+        initialTimeBetweenShots = timeBetweenShots;
+        initialTimeBetweenMines = timeBetweenMines;
     }
 
     // Update is called once per frame
@@ -143,15 +148,17 @@ public class BossTankController : MonoBehaviour
 
         AudioManager.instance.PlaySFX(0);
 
-        BossTankMine[] mines = FindObjectsOfType<BossTankMine>();
+        // BossTankMine[] mines = FindObjectsOfType<BossTankMine>();
 
-        if (mines.Length > 0)
-        {
-            foreach (BossTankMine foundMine in mines)
-            {
-                foundMine.Explode();
-            }
-        }
+        // if (mines.Length > 0)
+        // {
+        //     foreach (BossTankMine foundMine in mines)
+        //     {
+        //         foundMine.Explode();
+        //     }
+        // }
+
+        ExplodeAllMines();
 
         healths--;
 
@@ -174,5 +181,31 @@ public class BossTankController : MonoBehaviour
         anim.SetTrigger("StopMoving");
 
         hitBox.SetActive(true);
+    }
+
+    public void ExplodeAllMines()
+    {
+        BossTankMine[] mines = FindObjectsOfType<BossTankMine>();
+
+        if (mines.Length > 0)
+        {
+            foreach (BossTankMine foundMine in mines)
+            {
+                foundMine.Explode();
+            }
+        }
+    }
+
+    public void ResetTimeValues()
+    {
+        timeBetweenShots = initialTimeBetweenShots;
+        timeBetweenMines = initialTimeBetweenMines;
+    }
+
+    public void Reset()
+    {
+        healths = 5;
+        ExplodeAllMines();
+        ResetTimeValues();
     }
 }

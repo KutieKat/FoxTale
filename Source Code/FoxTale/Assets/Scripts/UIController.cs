@@ -132,4 +132,24 @@ public class UIController : MonoBehaviour
         shouldFadeFromBlack = true;
         shouldFadeToBlack = false;
     }
+
+    public void MoveRight()
+    {
+        PlayerController.instance.MoveRight();
+    }
+
+    public void MoveLeft()
+    {
+        PlayerController.instance.MoveLeft();
+    }
+
+    public void Stop()
+    {
+        PlayerController.instance.Stop();
+    }
+
+    public void Jump()
+    {
+        PlayerController.instance.Jump();
+    }
 }

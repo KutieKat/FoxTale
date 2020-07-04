@@ -6570,6 +6570,16 @@ PrefabInstance:
       propertyPath: levelToCheck
       value: Level3
       objectReference: {fileID: 0}
+    - target: {fileID: 3499956727146764785, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
+        type: 3}
+      propertyPath: targetTime
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499956727146764785, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
+        type: 3}
+      propertyPath: totalGems
+      value: 46
+      objectReference: {fileID: 0}
     - target: {fileID: 3678975516408040533, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
         type: 3}
       propertyPath: m_Name
@@ -7541,6 +7551,16 @@ PrefabInstance:
       propertyPath: isLocked
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3499956727146764785, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
+        type: 3}
+      propertyPath: targetTime
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499956727146764785, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
+        type: 3}
+      propertyPath: totalGems
+      value: 36
+      objectReference: {fileID: 0}
     - target: {fileID: 3678975516408040533, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
         type: 3}
       propertyPath: m_Name
@@ -7632,6 +7652,7 @@ GameObject:
   - component: {fileID: 864722407}
   - component: {fileID: 864722406}
   - component: {fileID: 864722408}
+  - component: {fileID: 864722409}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -7719,6 +7740,19 @@ MonoBehaviour:
   currentPoint: {fileID: 3678975516035398873}
   moveSpeed: 10
   theManager: {fileID: 355529873}
+  touchController: {fileID: 864722409}
+--- !u!114 &864722409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 864722405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf6f4b46d5be744dacc0615c1357718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1168486713
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7759,7 +7793,17 @@ PrefabInstance:
     - target: {fileID: 3499956727146764785, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
         type: 3}
       propertyPath: levelName
-      value: '3: Speed Up'
+      value: '3: Hurry Up'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499956727146764785, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
+        type: 3}
+      propertyPath: targetTime
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499956727146764785, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
+        type: 3}
+      propertyPath: totalGems
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 3678975516408040533, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
         type: 3}
@@ -8148,8 +8192,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 3.3999023, y: -256.40002}
-  m_SizeDelta: {x: -222.72034, y: -688.40857}
+  m_AnchoredPosition: {x: 3.3999023, y: -222.1}
+  m_SizeDelta: {x: -222.72034, y: -619.8311}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1445513356
 MonoBehaviour:
@@ -8623,6 +8667,16 @@ PrefabInstance:
       propertyPath: right
       value: 
       objectReference: {fileID: 359371950}
+    - target: {fileID: 3499956727146764785, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
+        type: 3}
+      propertyPath: targetTime
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3499956727146764785, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
+        type: 3}
+      propertyPath: totalGems
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 3678975516408040533, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
         type: 3}
       propertyPath: m_Name

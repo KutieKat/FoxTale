@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public enum Direction { 
+        Left, 
+        Right 
+    };
     public static PlayerController instance;
 
     public float moveSpeed;
@@ -21,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     public float bounceSpeed;
     public bool stopInput;
+    public Direction direction;
+    private int movingStatus; // -1: Moving Left; 0: Idling; 1: Moving right
 
     private void Awake()
     {
@@ -32,6 +38,9 @@ public class PlayerController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         theSpriteRenderer = GetComponent<SpriteRenderer>();
+
+        direction = Direction.Right;
+        movingStatus = 0;
     }
 
     // Update is called once per frame
@@ -41,7 +50,7 @@ public class PlayerController : MonoBehaviour
         {
             if (deflectCounter <= 0)
             {
-                theRigidBody.velocity = new Vector2(moveSpeed * Input.GetAxisRaw("Horizontal"), theRigidBody.velocity.y);
+                theRigidBody.velocity = new Vector2(moveSpeed * movingStatus, theRigidBody.velocity.y);
 
                 isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, .2f, whatIsGround);
 
@@ -52,29 +61,16 @@ public class PlayerController : MonoBehaviour
 
                 if (Input.GetButtonDown("Jump"))
                 {
-                    if (isGrounded)
-                    {
-                        theRigidBody.velocity = new Vector2(theRigidBody.velocity.x, jumpSpeed);
-                        AudioManager.instance.PlaySFX(10);
-                    }
-                    else
-                    {
-                        if (canDoubleJump)
-                        {
-                            theRigidBody.velocity = new Vector2(theRigidBody.velocity.x, jumpSpeed);
-                            canDoubleJump = false;
-                            AudioManager.instance.PlaySFX(10);
-                        }
-                    }
+                    Jump();
                 }
 
-                if (theRigidBody.velocity.x < 0)
-                {
-                    theSpriteRenderer.flipX = true;
-                }
-                else if (theRigidBody.velocity.x > 0)
+                if (direction == Direction.Right)
                 {
                     theSpriteRenderer.flipX = false;
+                }
+                else if (direction == Direction.Left)
+                {
+                    theSpriteRenderer.flipX = true;
                 }
             }
             else
@@ -108,5 +104,46 @@ public class PlayerController : MonoBehaviour
     {
         theRigidBody.velocity = new Vector2(theRigidBody.velocity.x, bounceSpeed);
         AudioManager.instance.PlaySFX(10);
+    }
+
+    public void Jump()
+    {
+        if (!PauseMenu.instance.isPaused && !stopInput)
+        {
+            if (deflectCounter <= 0)
+            {
+                if (isGrounded)
+                {
+                    theRigidBody.velocity = new Vector2(theRigidBody.velocity.x, jumpSpeed);
+                    AudioManager.instance.PlaySFX(10);
+                }
+                else
+                {
+                    if (canDoubleJump)
+                    {
+                        theRigidBody.velocity = new Vector2(theRigidBody.velocity.x, jumpSpeed);
+                        canDoubleJump = false;
+                        AudioManager.instance.PlaySFX(10);
+                    }
+                }
+            }
+        }
+    }
+
+    public void MoveRight()
+    {
+        direction = Direction.Right;
+        movingStatus = 1;
+    }
+
+    public void MoveLeft()
+    {
+        direction = Direction.Left;
+        movingStatus = -1;
+    }
+
+    public void Stop()
+    {
+        movingStatus = 0;
     }
 }

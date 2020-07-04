@@ -46,11 +46,16 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds((1f / UIController.instance.fadeSpeed) + 0.2f);
 
         UIController.instance.FadeFromBlack();
-        BossActivator.instance.gameObject.SetActive(true);
-        BossTankController.instance.gameObject.SetActive(false);
-        BossTankController.instance.healths = 5;
+
+        if (BossActivator.instance && BossTankController.instance)
+        {
+            BossActivator.instance.gameObject.SetActive(true);
+            BossTankController.instance.gameObject.SetActive(false);
+            BossTankController.instance.Reset();
+        }
 
         PlayerController.instance.gameObject.SetActive(true);
+        PlayerController.instance.direction = PlayerController.Direction.Right;
         PlayerController.instance.transform.position = CheckpointsController.instance.spawnPoint;
         PlayerHealthController.instance.currentHealth = PlayerHealthController.instance.maxHealth;
         UIController.instance.UpdateHealthDisplay();

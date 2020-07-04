@@ -8,6 +8,7 @@ public class LSPlayer : MonoBehaviour
     public float moveSpeed = 10.0f;
     public LSManager theManager;
     private bool levelLoading;
+    public TouchController touchController;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class LSPlayer : MonoBehaviour
 
         if (Vector3.Distance(transform.position, currentPoint.transform.position) < 0.1f && !levelLoading)
         {
-            if (Input.GetAxisRaw("Horizontal") > 0.5f)
+            if (touchController.SwipeRight)
             {
                 if (currentPoint.right != null)
                 {
@@ -30,7 +31,7 @@ public class LSPlayer : MonoBehaviour
                 }
             }
             
-            if (Input.GetAxisRaw("Horizontal") < -0.5f)
+            if (touchController.SwipeLeft)
             {
                 if (currentPoint.left != null)
                 {
@@ -38,7 +39,7 @@ public class LSPlayer : MonoBehaviour
                 }
             }
 
-            if (Input.GetAxisRaw("Vertical") > 0.5f)
+            if (touchController.SwipeUp)
             {
                 if (currentPoint.up != null)
                 {
@@ -46,7 +47,7 @@ public class LSPlayer : MonoBehaviour
                 }
             }
 
-            if (Input.GetAxisRaw("Vertical") < -0.5f)
+            if (touchController.SwipeDown)
             {
                 if (currentPoint.down != null)
                 {
@@ -58,7 +59,7 @@ public class LSPlayer : MonoBehaviour
             {
                 LSUIController.instance.ShowInfo(currentPoint);
 
-                if (Input.GetButtonDown("Jump"))
+                if (touchController.IsDoubleTap())
                 {
                     levelLoading = true;
 
