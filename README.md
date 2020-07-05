@@ -54,7 +54,7 @@
 | Play scene       | Press `^`                     | Make Foxy jump (Press twice for double jump) |
 | Play scene       | Press `<`, `>`                | Make Foxy move left and right                |
 
-## Programming Language
+## Programming Languages
 - C#
 
 ## Tools
