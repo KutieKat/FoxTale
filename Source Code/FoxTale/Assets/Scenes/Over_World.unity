@@ -6558,7 +6558,7 @@ PrefabInstance:
     - target: {fileID: 3499956727146764785, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
         type: 3}
       propertyPath: levelName
-      value: '4: The Final Day'
+      value: '4: Final Destination'
       objectReference: {fileID: 0}
     - target: {fileID: 3499956727146764785, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
         type: 3}
@@ -7793,7 +7793,7 @@ PrefabInstance:
     - target: {fileID: 3499956727146764785, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
         type: 3}
       propertyPath: levelName
-      value: '3: Hurry Up'
+      value: '3: Hurry Up!'
       objectReference: {fileID: 0}
     - target: {fileID: 3499956727146764785, guid: 2c3d1fa5750a8c848b3b2d21c2369ab9,
         type: 3}
